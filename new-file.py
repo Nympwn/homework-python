@@ -1,2 +1,1 @@
 print('Alina')
-print('new')
