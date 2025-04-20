@@ -1,2 +1,5 @@
 print('Alina')
-print('new')
+
+print('Double')
+
+print('Triple')
