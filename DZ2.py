@@ -11,8 +11,12 @@ user_info = {
 print(user_info)
 
 print('Решите выражение: \ny < x - 2')
-x = int(input('Введите число x: \n'))
-y = int(input('Введите число y \n'))
+x = int(
+    input('Введите число x: \n')
+)
+y = int(
+    input('Введите число y \n')
+)
 
 print('Корректность вычисления:\n')
 
