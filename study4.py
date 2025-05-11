@@ -1,5 +1,4 @@
 # Кортеж (tuples) – в отличие от списков (list) неизменяемая переменная
-from study3 import mylist
 
 mytuple = (78, 89.6, True, 'Строки')
 print(mytuple) # полный список
