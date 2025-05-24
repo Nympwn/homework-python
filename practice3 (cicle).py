@@ -113,3 +113,18 @@
 
 # Task 10
 
+# num = [-14, -6, -3, -1, 0, 1, 2, 5, 8, 10]
+# result = []
+# for x in num:
+#     if abs(x) > 5:
+#         result.append(x)
+#
+# print(result)
+
+
+# alternative
+# num = [-14, -6, -3, -1, 0, 1, 2, 5, 8, 10]
+# result = [x for x in num if abs(x) >5]
+# print(result)
+
+# Task 11
