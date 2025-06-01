@@ -1,3 +1,5 @@
+from itertools import permutations
+
 # Task 1
 
 word = input('Введите фразу:\n')
@@ -47,6 +49,34 @@ else:
 
 # Task 5
 
+word = input('Введите слово:\n').lower()
+my_list = list(word)
+n = len(my_list)
+index = 0
+stack = [(my_list, 0)]
+
+while index < len(stack):
+    current, l = stack[index]
+    index += 1
+
+    if l == n - 1:
+        print(''.join(current))
+    else:
+        i = n - 1
+        while i >= l:
+            temp = current[:]
+            temp[l], temp[i] = temp[i], temp[l]
+            stack.append((temp, l + 1))
+            i -= 1
+
+# Решение через import permutations
+
+s = input('Введите слово:\n').lower()
+perm = permutations(s)
+
+for p in perm:
+    print(''.join(p))
+
 # Task 6
 
 phrase = input('Введите фразу:\n').replace(' ', '')
@@ -62,3 +92,32 @@ spisok = phrase.split()
 print(max(spisok, key=len))
 
 # Task 8
+
+phrase = input('Введите фразу: \n').lower()
+replaceable = input('Введите заменяемое слово: \n').lower()
+replacement = input('Введите слово, на которое нужно заменить предыдущее: \n').lower()
+
+new_phrase = phrase.replace(replaceable, replacement)
+print(new_phrase.capitalize())
+
+# Task 9
+
+phrase = input('Введите фразу:\n').lower()
+alphabet = set('абвгдеёжзийклмниопрстуфхцчшщъыъэуя')
+result = 1
+
+for x in alphabet:
+    if x not in phrase:
+        result = 0
+        break
+
+if result == 1:
+    print('Ваша фраза является панграммой.')
+else:
+    print('Ваша фраза не является панграммой.')
+
+# Task 10
+
+phrase = input('Введите фразу:\n')
+
+print(phrase.title())
