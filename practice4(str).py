@@ -119,5 +119,4 @@ else:
 # Task 10
 
 phrase = input('Введите фразу:\n')
-
 print(phrase.title())
