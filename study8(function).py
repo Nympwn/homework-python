@@ -13,24 +13,71 @@
 
 def – определитель.
 
-def name_procedury(parametr):
-    body_procedury
+def name_procedure(parametrs):
+    body_procedure
+
+Что отличает функцию от процедуры:
+def name_function(parametrs):
+    body_function
+    return(result)
+
+Глобальная переменная – переменные, введенные в основной программе.
+Их могут использовать все подпрограммы.
+
+Локальные – используются внутри процедуры или функции.
+К ним обращение возможно только внутри программы, другие подпрограммы их не видят.
+Называется инкапсуляцией.
+Локальная создается только при вызове процедуры или функции.
+Как только работа подпрограммы будет закончена, все локальные переменные удаляются из памяти.
+
 '''
+#
+# def printline():
+#     print('----------------')
+#
+# # параметры
+#
+# def printline(n):
+#     print('=) '*n)
+#
+# n = int(input('n = '))
+# printline(n)
+#
+# def printline(a, n):
+#     print(a*n)
+#
+# a = str(input('a = '))
+# n = int(input('n = '))
+# print(a,n)
+#
+# # функции
+#
+# def Avg(a, b):
+#     return (a+b)/2
+#
+# a = int(input('a = '))
+# b = int(input('b = '))
+# print(Avg(a, b))
+# if Avg(a, b) > 5:
+#     print('Yes!')
+# else:
+#     print('No!')
 
-def printline():
-    print('----------------')
+def f():
+    global a
+    global b
+    b, c = a, b
+def g():
+    global a
+    global d
+    c = '0'
+    a = d + c
 
-# параметры
-
-def printline(n):
-    print('=) '*n)
-
-n = int(input('n = '))
-printline(n)
-
-def printline(a, n):
-    print(a*n)
-
-a = str(input('a = '))
-n = int(input('n = '))
-print(a,n)
+a = '2'
+b = '3'
+c = '5'
+d = '7'
+f()
+g()
+f()
+print(a + b + c + d)
