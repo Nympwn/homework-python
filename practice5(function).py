@@ -135,10 +135,46 @@
 #
 # max_number(a, b, c, d, e, f)
 #
-# Task 11
+# # Task 11
+#
+# def exchange(a, b, c, d):
+#     a, b = b, a
+#     c, d = d, c
+#     print(f'Значение a равно {a}.\n'
+#           f'Значение b равно {b}.\n'
+#           f'Значение c равно {c}.\n'
+#           f'Значение d равно {d}.')
+#
+# a = int(input('Введите значение a:\n'))
+# b = int(input('Введите значение b:\n'))
+# c = int(input('Введите значение c:\n'))
+# d = int(input('Введите значение d:\n'))
+#
+# exchange(a, b, c, d)
+#
+# # Task 12
+#
+# def perimeter_triangle(a, b, c):
+#     return a + b + c
+#
+# def square_triangle(a, b, c):
+#     half_p = perimeter_triangle(a, b, c) / 2
+#     return (half_p*(half_p - a)*(half_p - b)*(half_p - c)) ** 0.5
+#
+# a1 = float(input('Введите первую длину стороны первого треугольника:\n'))
+# b1 = float(input('Введите вторую длину стороны первого треугольника:\n'))
+# c1 = float(input('Введите третью длину стороны первого треугольника:\n'))
 
-# Task 12
-
+# a2 = float(input('Введите первую длину стороны второго треугольника:\n'))
+# b2 = float(input('Введите вторую стороны второго треугольника:\n'))
+# c2 = float(input('Введите третью длину стороны второго треугольника:\n'))
+#
+# sum_perimeter = perimeter_triangle(a1, b1, c1) + perimeter_triangle(a2, b2, c2)
+# sum_square = round(square_triangle(a1, b1, c1) + square_triangle(a2, b2, c2), 2)
+#
+# print(f'Сумма периметров двух треугольников равна {sum_perimeter}')
+# print(f'Сумма площадей двух треугольников равна {sum_square}')
+#
 # # Task 13
 #
 # def side_lateral(a, b, h):
@@ -229,3 +265,76 @@
 #     if number == 0:
 #         break
 #     dividers(number)
+#
+# # Task 19
+#
+# def point_in_rect(a, a1, a2, b, b1, b2):
+#     return a1 <= a <= a2 and b1 < b < b2
+#
+# point_up_left1 = int(input('Введите координату высоты верхней левой точки прямоугольника:\n'))
+# point_up_left2 = int(input('Введите координату ширины верхней левой точки прямоугольника:\n'))
+# point_down_right1 = int(input('Введите координату высоты нижней правой точки прямоугольника:\n'))
+# point_down_right2 = int(input('Введите координату ширины нижней правой точки прямоугольника:\n'))
+# point1 = int(input('Введите координату высоты точки:\n'))
+# point2 = int(input('Введите координату ширины точки:\n'))
+#
+# print(point_in_rect(point1, point_up_left1, point_down_right1, point2, point_up_left2, point_down_right2))
+#
+# # Task 20
+#
+# def side_len(a1, a2, b1, b2):
+#     return ((a2 - a1)**2 + (b2 - b1)**2)**0.5
+#
+# def triangle_square(c, d, e):
+#     half_perimeter = (c + d + e) / 2
+#     return (half_perimeter * (half_perimeter - c) * (half_perimeter - d) * (half_perimeter * e))**0.5
+#
+# def point_in_triangle(a, a1, a2, a3, b, b1, b2, b3):
+#     c = side_len(a1, a2, b1, b2)
+#     d = side_len(a2, a3, b2, b3)
+#     e = side_len(a3, a1, b3, b1)
+#     square = triangle_square(c, d, e)
+#
+#     c1 = side_len(a, a1, b, b1)
+#     d1 = side_len(a, a2, b, b2)
+#     e1 = side_len(a2, a3, b2, b3)
+#     square1 = triangle_square(c1, d1, e1)
+#
+#     c2 = side_len(a, a2, b, b2)
+#     d2 = side_len(a, a3, b, b3)
+#     e2 = side_len(a2, a3, b2, b3)
+#     square2 = triangle_square(c2, d2, e2)
+#
+#     c3 = side_len(a, a3, b, b3)
+#     d3 = side_len(a, a1, b, b1)
+#     e3 = side_len(a3, a1, b3, b1)
+#     square3 = triangle_square(c3, d3, e3)
+#
+#     total_square = square1 + square2 + square3
+#     return square == total_square
+#
+# point_triangle_up1 = int(input('Введите координату высоты верхней точки треугольника:\n'))
+# point_triangle_up2 = int(input('Введите координату ширины верхней точки треугольника:\n'))
+# point_triangle_right1 = int(input('Введите координату высоты правой точки треугольника:\n'))
+# point_triangle_right2 = int(input('Введите координату ширины правой точки треугольника:\n'))
+# point_triangle_left1 = int(input('Введите координату высоты левой точки треугольника:\n'))
+# point_triangle_left2 = int(input('Введите координату ширины левой точки треугольника:\n'))
+# point1 = int(input('Введите координату высоты точки:\n'))
+# point2 = int(input('Введите координату ширины точки:\n'))
+#
+# print(point_in_triangle(point1, point_triangle_up1, point_triangle_left1, point_triangle_right1, point2, point_triangle_up2, point_triangle_left2, point_triangle_right2))
+#
+# # Task 21
+#
+# def average_result(a, b, c, d, e):
+#     result_list = [a, b, c, d, e]
+#     result_list = sorted(result_list)
+#     return round(sum(result_list[1:4]) / 3, 2)
+#
+# score1 = int(input('Введите оценку первого эксперта:\n'))
+# score2 = int(input('Введите оценку второго эксперта:\n'))
+# score3 = int(input('Введите оценку третьего эксперта:\n'))
+# score4 = int(input('Введите оценку четвертого эксперта:\n'))
+# score5 = int(input('Введите оценку пятого эксперта:\n'))
+#
+# print(f'Среднее количество баллов у спортсмена составляет {average_result(score1, score2, score3, score4, score5)}.')
