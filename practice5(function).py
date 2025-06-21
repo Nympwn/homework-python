@@ -311,7 +311,7 @@
 #     square3 = triangle_square(c3, d3, e3)
 #
 #     total_square = square1 + square2 + square3
-#     return round(abs(total_square) - square) < 1
+#     return round(total_square, 5) == round(square, 5)
 #
 # point_triangle_up1 = int(input('Введите координату высоты верхней точки треугольника:\n'))
 # point_triangle_up2 = int(input('Введите координату ширины верхней точки треугольника:\n'))
