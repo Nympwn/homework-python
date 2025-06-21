@@ -81,3 +81,37 @@ f()
 g()
 f()
 print(a + b + c + d)
+
+# Рекурсия
+
+def F(n):
+    if n > 2:
+        return  F(n - 1) + F(n - 1)
+    else:
+        return 1
+
+n = int(input())
+print(F(n))
+
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+n = int(input('n = '))
+print(factorial(n))
+
+def F(n):
+    if n > 2:
+        return F(n - 1) + G(n - 2)
+    else:
+        return n
+
+def G(n):
+    if n > 2:
+        return G(n - 1) + F(n - 2)
+    else:
+        return n + 1
+
+print(F(4))
