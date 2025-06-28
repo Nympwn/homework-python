@@ -6,15 +6,15 @@ operacion = input('Выберите действие, которое нужно 
                   '1. сложение (+)\n'
                   '2. вычитание (-)\n'
                   '3. деление (/)\n'
-                  '4. умножения (*)\n')
+                  '4. умножения (*)\n').lower()
 
-if operacion == '1' or operacion == '+' or operacion == 'addition':
+if operacion == '1' or operacion == '+' or operacion == 'сложение':
     print(f'Сложение: {a} + {b} = {round(a + b, 2)}')
-elif operacion == '2' or operacion == 'subtraction' or operacion == '-':
+elif operacion == '2' or operacion == 'вычитание' or operacion == '-':
     print(f'Вычитание: {a} - {b} = {round(a - b, 2)}')
-elif operacion == '3' or operacion == 'division' or operacion == '/':
+elif operacion == '3' or operacion == 'деление' or operacion == '/':
     print(f'Деление: {a} / {b} = {round(a / b, 2)}')
-elif operacion == '4' or operacion == 'multiplication' or operacion == '*':
+elif operacion == '4' or operacion == 'умножение' or operacion == '*':
     print(f'Умножение: {a} * {b} = {round(a * b, 2)}')
 else:
     print('Выбран неверный пункт.')
